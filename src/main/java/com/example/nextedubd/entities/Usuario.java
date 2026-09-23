@@ -48,8 +48,8 @@ public abstract class Usuario {
         this.isAtivo = isAtivo;
     }
 
-    public int getIdUsuario() {
-        return Math.toIntExact(idUsuario);
+    public Long getIdUsuario() {
+        return idUsuario;
     }
 
     public void setIdUsuario(Long idUsuario) {
@@ -100,11 +100,18 @@ public abstract class Usuario {
         return tipoUsuario;
     }
 
+    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Usuario usuario = (Usuario) o;
-        return idUsuario == usuario.idUsuario && isAtivo == usuario.isAtivo && Objects.equals(nomeUsuario, usuario.nomeUsuario) && Objects.equals(emailUsuario, usuario.emailUsuario) && Objects.equals(senhaUsuario, usuario.senhaUsuario) && Objects.equals(dataCadastro, usuario.dataCadastro) && tipoUsuario == usuario.tipoUsuario;
+        return Objects.equals(idUsuario, usuario.idUsuario)
+                && isAtivo == usuario.isAtivo && Objects.equals(nomeUsuario, usuario.nomeUsuario)
+                && Objects.equals(emailUsuario, usuario.emailUsuario) && Objects.equals(senhaUsuario, usuario.senhaUsuario)
+                && Objects.equals(dataCadastro, usuario.dataCadastro) && tipoUsuario == usuario.tipoUsuario;
     }
 
     @Override
