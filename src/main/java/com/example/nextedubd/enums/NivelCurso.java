@@ -3,16 +3,16 @@ package com.example.nextedubd.enums;
 public enum NivelCurso {
 
     INICIANTE("Iniciante"),
-    INTERMEDIARIO("Intermediario"),
-    AVAÇADO("Avançaddo");
+    INTERMEDIARIO("Intermediário"),
+    AVACADO("Avançado");
 
-    private final String Nivel;
+    private final String nivel;
 
     NivelCurso(String nivel) {
-        Nivel = nivel;
+        this.nivel = nivel;
     }
 
     public String getNivel() {
-        return Nivel;
+        return nivel;
     }
 }

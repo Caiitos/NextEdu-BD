@@ -2,7 +2,10 @@ package com.example.nextedubd.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+import java.util.List;
 
 import static com.example.nextedubd.enums.TipoUsuario.PROFESSOR;
 
@@ -11,21 +14,32 @@ import static com.example.nextedubd.enums.TipoUsuario.PROFESSOR;
 public class Professor extends Usuario{
 
     @Column(name = "especialidade", nullable = false)
-    private String especialiddae;
+    private String especialidade;
 
-    @Column(name = "descrição", length = 255,nullable = true)
+    @Column(name = "descricao", length = 255)
     private String descricao;
+
+    @OneToMany(mappedBy = "professor")
+    private List<Curso> cursos;
 
     public Professor() {
         super();
         setTipoUsuario(PROFESSOR);
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public String getEspecialiddae() {
-        return especialiddae;
+        return especialidade;
     }
 
     public void setEspecialiddae(String especialiddae) {
-        this.especialiddae = especialiddae;
+        this.especialidade = especialiddae;
     }
 }

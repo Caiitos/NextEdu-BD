@@ -3,7 +3,7 @@ package com.example.nextedubd.enums;
 public enum StatusMatricula {
 
     ATIVA("Ativa"),
-    CONCLUIDA("Concluida"),
+    CONCLUIDA("Concluída"),
     CANCELADA("Cancelada");
 
     private final String status;

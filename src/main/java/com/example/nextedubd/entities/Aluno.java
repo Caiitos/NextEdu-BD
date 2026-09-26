@@ -1,7 +1,8 @@
 package com.example.nextedubd.entities;
 
-import com.example.nextedubd.enums.StatusMatricula;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 import static com.example.nextedubd.enums.TipoUsuario.ALUNO;
 
@@ -10,24 +11,20 @@ import static com.example.nextedubd.enums.TipoUsuario.ALUNO;
 public class Aluno extends Usuario {
 
     @Column(name = "matricula",nullable = false,unique = true)
-    private String matricula;
-
-    @Column(name = "status_matricula", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private StatusMatricula statusMatricula;
-
+    @OneToMany(mappedBy = "aluno")
+    private List<Matricula> matriculas;
 
     public Aluno() {
         super();
         setTipoUsuario(ALUNO);
+
     }
 
-    public StatusMatricula getStatusMatricula() {
-        return statusMatricula;
+    public List<Matricula> getMatriculas() {
+        return matriculas;
     }
 
-    public String getMatricula() {
-        return matricula;
+    public void setMatriculas(List<Matricula> matriculas) {
+        this.matriculas = matriculas;
     }
-
 }

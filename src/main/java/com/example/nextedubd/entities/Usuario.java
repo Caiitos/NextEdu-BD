@@ -16,10 +16,10 @@ public abstract class Usuario {
     @Column(name = "nome_usuario", nullable = false, length = 45)
     private String nomeUsuario;
 
-    @Column(name = "e-mail_usuario",nullable = false, length = 150, unique = true)
+    @Column(name = "email_usuario",nullable = false, length = 150, unique = true)
     private String emailUsuario;
 
-    @Column(name = "senha_usuario", nullable = false, length = 45)
+    @Column(name = "senha_usuario", nullable = false, length = 255)
     private String senhaUsuario;
 
     @Column(name = "data_cadastro",nullable = false)
@@ -31,6 +31,11 @@ public abstract class Usuario {
 
     @Column(name = "usuario_ativo", nullable = false)
     private boolean isAtivo = true;
+
+    @PrePersist
+    private void antesDeSalvar(){
+        this.dataCadastro = LocalDate.now();
+    }
 
     public Usuario() {
     }
@@ -50,10 +55,6 @@ public abstract class Usuario {
 
     public Long getIdUsuario() {
         return idUsuario;
-    }
-
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
     }
 
     public String getNomeUsuario() {
@@ -84,10 +85,6 @@ public abstract class Usuario {
         return dataCadastro;
     }
 
-    public void setDataCadastro(LocalDate dataCadastro) {
-        this.dataCadastro = dataCadastro;
-    }
-
     public boolean isAtivo() {
         return isAtivo;
     }
@@ -100,7 +97,7 @@ public abstract class Usuario {
         return tipoUsuario;
     }
 
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+    protected void setTipoUsuario(TipoUsuario tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
 

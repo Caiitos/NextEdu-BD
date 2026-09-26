@@ -4,7 +4,7 @@ public enum TipoUsuario {
 
     ALUNO("Aluno"),
     PROFESSOR("Professor"),
-    DEV("Desenvolvedor");
+    ADM("Admin");
 
     private final String tipo;
 
