@@ -1,4 +1,4 @@
-package com.example.nextedubd.entities;
+package com.example.nextedubd.entities.usuarios;
 
 import com.example.nextedubd.enums.TipoUsuario;
 import jakarta.persistence.*;

@@ -1,5 +1,6 @@
-package com.example.nextedubd.entities;
+package com.example.nextedubd.entities.usuarios;
 
+import com.example.nextedubd.entities.conteudo.Curso;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -11,7 +12,7 @@ import static com.example.nextedubd.enums.TipoUsuario.PROFESSOR;
 
 @Entity
 @Table(name = "professores")
-public class Professor extends Usuario{
+public class Professor extends Usuario {
 
     @Column(name = "especialidade", nullable = false)
     private String especialidade;

@@ -1,5 +1,6 @@
-package com.example.nextedubd.entities;
+package com.example.nextedubd.entities.usuarios;
 
+import com.example.nextedubd.entities.Matricula;
 import jakarta.persistence.*;
 
 import java.util.List;

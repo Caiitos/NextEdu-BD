@@ -1,6 +1,8 @@
-package com.example.nextedubd.entities;
+package com.example.nextedubd.entities.conteudo;
 
 
+import com.example.nextedubd.entities.Matricula;
+import com.example.nextedubd.entities.usuarios.Professor;
 import com.example.nextedubd.enums.NivelCurso;
 import com.example.nextedubd.enums.StatusCurso;
 import jakarta.persistence.*;
@@ -37,6 +39,10 @@ public class Curso {
     @ManyToOne
     @JoinColumn(name = "fk_professor")
     private Professor professor;
+
+    @OneToMany(mappedBy = "curso")
+    @JoinColumn(name = "fk_modulos")
+    private List<Modulo> modulos;
 
     @OneToMany(mappedBy = "curso")
     @JoinColumn(name = "fk_matriculas")

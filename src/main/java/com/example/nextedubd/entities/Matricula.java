@@ -1,5 +1,7 @@
 package com.example.nextedubd.entities;
 
+import com.example.nextedubd.entities.conteudo.Curso;
+import com.example.nextedubd.entities.usuarios.Aluno;
 import com.example.nextedubd.enums.StatusMatricula;
 import jakarta.persistence.*;
 
