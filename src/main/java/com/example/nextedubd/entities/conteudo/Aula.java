@@ -1,7 +1,6 @@
 package com.example.nextedubd.entities.conteudo;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 
@@ -11,7 +10,7 @@ public class Aula {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idAula;
+    private Long idAula;
 
     @Column(name = "titulo_aula",  nullable = false, length = 45)
     private String titulo;
@@ -30,13 +29,15 @@ public class Aula {
 
     private int ordem;
 
+    @ManyToOne
+    @JoinColumn(name = "id_modulo", nullable = false)
     private Modulo modulo;
 
     public Aula() {
 
     }
 
-    public Aula(int idAula, String titulo, String conteudo,
+    public Aula(Long idAula, String titulo, String conteudo,
                 int duracao, String descricao, String urlVideo, int ordem, Modulo modulo) {
 
         this.idAula = idAula;
@@ -49,11 +50,11 @@ public class Aula {
         this.modulo = modulo;
     }
 
-    public int getIdAula() {
+    public Long getIdAula() {
         return idAula;
     }
 
-    public void setIdAula(int idAula) {
+    public void setIdAula(Long idAula) {
         this.idAula = idAula;
     }
 

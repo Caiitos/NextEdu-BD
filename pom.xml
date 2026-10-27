@@ -54,7 +54,11 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency> <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
             <scope>runtime</scope>
         </dependency>
@@ -75,8 +79,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webmvc-test</artifactId>
-            <scope>test</scope>
+            <artifactId>spring-boot-starter-webmvc-test</artifactId>  <scope>test</scope>
         </dependency>
     </dependencies>
 

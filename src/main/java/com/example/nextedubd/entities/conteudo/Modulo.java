@@ -22,10 +22,11 @@ public class Modulo {
     @Column(name = "ordem_modulo", nullable = false, unique = true)
     private int ordem;
 
-    @OneToMany(mappedBy = "modulos")
-    @JoinColumn(name = "fk_aulas")
+    @OneToMany(mappedBy = "modulo")
     private List<Aula> aulas;
 
+    @ManyToOne
+    @JoinColumn(name = "fk_curso", nullable = false)
     private Curso curso;
 
     public Modulo() {
