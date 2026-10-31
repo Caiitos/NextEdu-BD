@@ -1,6 +1,6 @@
-package com.example.nextedubd.entities.usuarios;
+package com.example.nextedubd.entities.users;
 
-import com.example.nextedubd.entities.conteudo.Curso;
+import com.example.nextedubd.entities.content.Curso;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -36,11 +36,11 @@ public class Professor extends Usuario {
         this.descricao = descricao;
     }
 
-    public String getEspecialiddae() {
+    public String getEspecialidade() {
         return especialidade;
     }
 
-    public void setEspecialiddae(String especialiddae) {
+    public void setEspecialidade(String especialiddae) {
         this.especialidade = especialiddae;
     }
 }

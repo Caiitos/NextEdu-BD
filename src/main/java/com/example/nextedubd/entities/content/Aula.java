@@ -1,4 +1,4 @@
-package com.example.nextedubd.entities.conteudo;
+package com.example.nextedubd.entities.content;
 
 import jakarta.persistence.*;
 
@@ -18,7 +18,7 @@ public class Aula {
     @Column(name = "conteudo_aula", nullable = false, length = 255)
     private String conteudo;
 
-    @Column(name = "duracao_aula", nullable = false, unique = true)
+    @Column(name = "duracao_aula")
     private int duracao;
 
     @Column(name = "descricao_aula", length = 255)
@@ -118,7 +118,10 @@ public class Aula {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Aula aula = (Aula) o;
-        return idAula == aula.idAula && duracao == aula.duracao && ordem == aula.ordem && Objects.equals(titulo, aula.titulo) && Objects.equals(conteudo, aula.conteudo) && Objects.equals(descricao, aula.descricao) && Objects.equals(urlVideo, aula.urlVideo) && Objects.equals(modulo, aula.modulo);
+        return duracao == aula.duracao && ordem == aula.ordem &&
+                Objects.equals(idAula, aula.idAula) && Objects.equals(titulo, aula.titulo) &&
+                Objects.equals(conteudo, aula.conteudo) && Objects.equals(descricao, aula.descricao) &&
+                Objects.equals(urlVideo, aula.urlVideo) && Objects.equals(modulo, aula.modulo);
     }
 
     @Override

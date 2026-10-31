@@ -1,8 +1,7 @@
-package com.example.nextedubd.entities.conteudo;
+package com.example.nextedubd.entities.content;
 
 
-import com.example.nextedubd.entities.Matricula;
-import com.example.nextedubd.entities.usuarios.Professor;
+import com.example.nextedubd.entities.users.Professor;
 import com.example.nextedubd.enums.NivelCurso;
 import com.example.nextedubd.enums.StatusCurso;
 import jakarta.persistence.*;
@@ -11,7 +10,6 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "cursos")
 public class Curso {
 

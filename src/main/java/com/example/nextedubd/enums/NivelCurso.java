@@ -4,7 +4,7 @@ public enum NivelCurso {
 
     INICIANTE("Iniciante"),
     INTERMEDIARIO("Intermediário"),
-    AVACADO("Avançado");
+    AVANCADO("Avançado");
 
     private final String nivel;
 

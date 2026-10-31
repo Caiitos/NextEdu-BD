@@ -1,4 +1,4 @@
-package com.example.nextedubd.entities.conteudo;
+package com.example.nextedubd.entities.content;
 
 import jakarta.persistence.*;
 
@@ -19,7 +19,7 @@ public class Modulo {
     @Column(name = "descricao", length = 255)
     private String descricao;
 
-    @Column(name = "ordem_modulo", nullable = false, unique = true)
+    @Column(name = "ordem_modulo", nullable = false)
     private int ordem;
 
     @OneToMany(mappedBy = "modulo")

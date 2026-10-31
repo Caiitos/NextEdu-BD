@@ -1,7 +1,6 @@
-package com.example.nextedubd.entities;
+package com.example.nextedubd.entities.content;
 
-import com.example.nextedubd.entities.conteudo.Curso;
-import com.example.nextedubd.entities.usuarios.Aluno;
+import com.example.nextedubd.entities.users.Aluno;
 import com.example.nextedubd.enums.StatusMatricula;
 import jakarta.persistence.*;
 
@@ -24,11 +23,11 @@ public class Matricula {
     private LocalDate dataMatricula;
 
     @ManyToOne
-    @JoinColumn(name = "fk_alunos")
+    @JoinColumn(name = "fk_alunos", nullable = false)
     private Aluno aluno;
 
     @ManyToOne
-    @JoinColumn(name = "fk_cursos")
+    @JoinColumn(name = "fk_cursos", nullable = false)
     private Curso curso;
 
     public Matricula() {

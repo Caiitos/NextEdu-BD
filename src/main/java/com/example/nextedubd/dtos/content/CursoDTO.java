@@ -1,0 +1,4 @@
+package com.example.nextedubd.dtos.content;
+
+public class CursoDTO {
+}
